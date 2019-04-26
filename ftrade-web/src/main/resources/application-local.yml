@@ -1,0 +1,27 @@
+server:
+  port: ${local.web.server.port}
+spring:
+  profiles: local
+  application:
+    name: ftrade-web
+  data:
+    mongodb:
+      uri: ${local.spring.data.mongo.uri}
+  redis:
+    host: ${local.spring.redis.host}
+    port: ${local.spring.redis.port}
+    password: ${local.spring.redis.password}
+    # 连接超时时间（毫秒）
+    timeout: 60000ms
+
+logging:
+  pattern:
+    #console: "%d - %msg%n"
+  # file: ${product.messagesoa.logging.file}
+  level:
+    root: ${local.logging.level.root}
+
+app:
+  config:
+    ldap:
+      notLdapFlag: ${local.app.config.ldap.notLdapFlag}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd" default-lazy-init="false">
+    <!-- mongo配置-->
+    <mongo:mongo-client id="mongo" replica-set="${mongo.server.host}" credentials="${mongo.server.username}:${mongo.server.password}@${mongo.server.dbname}">
+        <mongo:client-options
+                connections-per-host="${mongo.option.connectionsPerHost}"
+                threads-allowed-to-block-for-connection-multiplier="${mongo.option.threadsAllowedToBlockForConnectionMultiplier}"
+                connect-timeout="${mongo.option.connectTimeout}"
+                max-wait-time="${mongo.option.maxWaitTime}"
+                socket-keep-alive="${mongo.option.socketKeepAlive}"
+                socket-timeout="${mongo.option.socketTimeout}"/>
+    </mongo:mongo-client>
+
+    <!-- mongoDbFactory -->
+    <mongo:db-factory id="mongoDbFactory" mongo-ref="mongo" dbname="${mongo.server.dbname}"/>
+
+    <bean id="mappingContext" class="org.springframework.data.mongodb.core.mapping.MongoMappingContext" />
+
+    <!-- 这里设置为空,可以把 spring data mongodb 多余保存的_class字段去掉 -->
+    <bean id="defaultMongoTypeMapper" class="org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper">
+        <constructor-arg name="typeKey">
+            <null />
+        </constructor-arg>
+    </bean>
+
+    <!-- 配置mongodb映射类型 -->
+    <bean id="mappingMongoConverter" class="org.springframework.data.mongodb.core.convert.MappingMongoConverter">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+        <constructor-arg name="mappingContext" ref="mappingContext" />
+        <property name="typeMapper" ref="defaultMongoTypeMapper" />
+    </bean>
+
+    <!-- mongo模板-->
+    <!--<bean channelId="replicaMongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">-->
+        <!--<constructor-arg name="mongoDbFactory" ref=AvoidRepeatableCommit"mongoDbFactory" />-->
+        <!--<constructor-arg name="mongoConverter" ref="mappingMongoConverter" />-->
+    <!--</bean>-->
+
+    <!-- 首选主节点，大多情况下读操作在主节点，如果主节点不可用，如故障转移，读操作在从节点。 -->
+    <bean id="primaryPreferredReadPreference" class="com.mongodb.TaggableReadPreference.PrimaryPreferredReadPreference"></bean>
+
+    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+        <constructor-arg name="mongoConverter" ref="mappingMongoConverter" />
+        <property name="readPreference" ref="primaryPreferredReadPreference"></property>
+    </bean>
+</beans>

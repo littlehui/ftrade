@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration  >
+
+    <appender name="myConsole" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%-d{yyyy-MM-dd HH:mm:ss} [%c]-[%p] %m%n" />
+        </layout>
+    </appender>
+
+    <logger name="com.cyou.fz.soa" additivity="false">
+        <level value="error"/>
+        <appender-ref ref="myConsole" />
+    </logger>
+    <logger name="com.alibaba.dubbo" additivity="false">
+        <level value="error"/>
+        <appender-ref ref="myConsole" />
+    </logger>
+
+    <logger name="com.littlehui.mail.dump.test" additivity="true">
+        <level value="info"/>
+        <appender-ref ref="myConsole" />
+    </logger>
+
+
+    <!-- 根logger的设置-->
+    <root>
+        <priority value ="info"/>
+        <appender-ref ref="myConsole"/>
+    </root>
+</log4j:configuration>
