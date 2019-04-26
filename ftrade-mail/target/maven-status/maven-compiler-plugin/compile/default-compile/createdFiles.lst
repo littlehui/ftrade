@@ -1,8 +1,0 @@
-com/littlehui/ftrade/mail/service/CompanyDetailCreator.class
-com/u17173/treasurebox/utils/url/XHttpRequest.class
-com/littlehui/ftrade/mail/dao/ConsumerDetailManager.class
-com/littlehui/ftrade/mail/bean/ConsumerDetail.class
-com/littlehui/ftrade/mail/service/MailImportService.class
-com/littlehui/ftrade/mail/config/MailConfig.class
-com/littlehui/ftrade/mail/dao/InitialConsumerDetailManager.class
-com/littlehui/ftrade/mail/bean/InitialConsumerDetail.class
