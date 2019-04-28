@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.u17173.treasurebox:treasurebox-db-api:1.3.1-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$USER_HOME$/software/repository/com/u17173/treasurebox/treasurebox-db-api/1.3.1-SNAPSHOT/treasurebox-db-api-1.3.1-SNAPSHOT.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/u17173/treasurebox/treasurebox-db-api/1.3.1-SNAPSHOT/treasurebox-db-api-1.3.1-20190425.103543-8.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$USER_HOME$/software/repository/com/u17173/treasurebox/treasurebox-db-api/1.3.1-SNAPSHOT/treasurebox-db-api-1.3.1-SNAPSHOT-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/u17173/treasurebox/treasurebox-db-api/1.3.1-SNAPSHOT/treasurebox-db-api-1.3.1-20190425.103543-8-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/software/repository/com/u17173/treasurebox/treasurebox-db-api/1.3.1-SNAPSHOT/treasurebox-db-api-1.3.1-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/u17173/treasurebox/treasurebox-db-api/1.3.1-SNAPSHOT/treasurebox-db-api-1.3.1-20190425.103543-8-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -1,16 +1,14 @@
 package com.littlehui.ftrade.tests.services;
 
+import com.littlehui.ftrade.mail.dao.InitialConsumerDetailManager;
 import com.littlehui.ftrade.mail.service.MailService;
 import com.littlehui.ftrade.web.FtradeWebApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.mail.MailSender;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by littlehui on 2018/9/10.
@@ -23,9 +21,36 @@ public class MailServiceTest {
     @Autowired
     MailService mailService;
 
+    @Autowired
+    InitialConsumerDetailManager initialConsumerDetailManager;
+
     @Test
     public void validAllEmailTests() {
-        mailService.validAllEmailBatch("61");
+/*        mailService.validAllEmailBatch("61", 10);
+        mailService.validAllEmailBatch("62", 10);
+        mailService.validAllEmailBatch("63", 10);*/
+/*        mailService.validAllEmailBatch("64", 10);
+        mailService.validAllEmailBatch("65", 10);*/
+/*
+        mailService.validAllEmailBatch("66", 10);
+*/
+        mailService.validAllEmailBatch("67", 10);
+        mailService.validAllEmailBatch("68", 10);
+        mailService.validAllEmailBatch("69", 10);
+        mailService.validAllEmailBatch("70", 10);
+        mailService.validAllEmailBatch("71", 10);
+        mailService.validAllEmailBatch("72", 10);
+        mailService.validAllEmailBatch("73 ", 10);
+        mailService.validAllEmailBatch("74", 10);
+        mailService.validAllEmailBatch("75", 10);
+        mailService.validAllEmailBatch("76", 10);
+        mailService.validAllEmailBatch("77", 10);
+        mailService.validAllEmailBatch("78", 10);
+        mailService.validAllEmailBatch("79", 10);
     }
 
+    @Test
+    public void testQUery() {
+        initialConsumerDetailManager.findByBatchAndNonTested("67");
+    }
 }

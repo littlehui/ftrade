@@ -43,11 +43,11 @@ public class MailService {
     @Autowired
     AvaliableConsumerDetailManager avaliableConsumerDetailManager;
 
-    public void validAllEmailBatch(String batch) {
-        List<InitialConsumerDetail> initialConsumerDetails = initialConsumerDetailManager.findByBatch(batch);
+    public void validAllEmailBatch(String batch, int thread) {
+        List<InitialConsumerDetail> initialConsumerDetails = initialConsumerDetailManager.findByBatchAndNonTested(batch);
         invaliableConsumerDetailManager.removeByBatch(batch);
         avaliableConsumerDetailManager.removeByBatch(batch);
-        int markTotal = 5;
+        int markTotal = thread == 0 ? 1 : thread;
         for (int mark = 0; mark<markTotal; mark++) {
             MailCheckThread mailCheckThread = new MailCheckThread(this, initialConsumerDetails, mark);
             mailCheckThread.start();
@@ -88,6 +88,7 @@ public class MailService {
                     Boolean result = MailValid.valid(companyDetail.getMail(), "idaymay.com");
                     log.info("mark = " + mark + "验证邮箱：" + companyDetail.getMail() + "结果：" + result);
                     log.info("mark = " + mark + "第" + i + "个结束");
+                    companyDetail.setTestedFlag(true);
                     if (result) {
                         AvaliableConsumerDetail avaliableConsumerDetail = ObjectUtils.convertObj(companyDetail, AvaliableConsumerDetail.class);
                         avaliableConsumerDetailManager.save(avaliableConsumerDetail);
@@ -95,6 +96,7 @@ public class MailService {
                         InvaliableConsumerDetail invaliableConsumerDetail = ObjectUtils.convertObj(companyDetail, InvaliableConsumerDetail.class);
                         invaliableConsumerDetailManager.save(invaliableConsumerDetail);
                     }
+                    initialConsumerDetailManager.save(companyDetail);
                     Long resultMills = System.currentTimeMillis();
                     log.info("mark = " + mark + "耗时：" + (resultMills - startMills)/1000 + "秒");
                     i++;

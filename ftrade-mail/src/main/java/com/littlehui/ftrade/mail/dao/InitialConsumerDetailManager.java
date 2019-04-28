@@ -27,4 +27,12 @@ public class InitialConsumerDetailManager extends AbstractManager<InitialConsume
         query.addCriteria(criteria);
         return this.findList(query);
     }
+
+    public List<InitialConsumerDetail> findByBatchAndNonTested(String batch) {
+        Query query = new Query();
+        Criteria criteria = new Criteria().and("batchInfo").is(batch).orOperator(new Criteria().and("testedFlag").exists(false), new Criteria().and("testedFlag").is(false));
+        query.addCriteria(criteria);
+        List<InitialConsumerDetail> initialConsumerDetails = this.findList(query);
+        return initialConsumerDetails;
+    }
 }
