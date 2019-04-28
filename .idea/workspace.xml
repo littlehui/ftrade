@@ -47,27 +47,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MailImportTest.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ftrade-web/target/test-classes/com/littlehui/ftrade/tests/services/MailImportTest.class">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5365">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#21498#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1230">
+              <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MailServiceTest.class" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ftrade-web/target/test-classes/com/littlehui/ftrade/tests/services/MailServiceTest.class">
+      <file leaf-file-name="README.MD" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.MD">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gitpushauto.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gitpushauto.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#898#0" expanded="true" />
-                <element signature="e#837#838#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/ftrade-mail/src/main/java/com/littlehui/ftrade/mail/dao/AvaliableConsumerDetailManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+              <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,34 +104,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractManager.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/software/repository/com/u17173/treasurebox/treasurebox-auth-mongo/1.3.1-SNAPSHOT/treasurebox-auth-mongo-1.3.1-SNAPSHOT-sources.jar!/com/u17173/treasurebox/auth/mongo/dao/AbstractManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#3176#3177#0" expanded="false" />
-                <element signature="e#3226#3227#0" expanded="false" />
-                <element signature="e#3636#3637#0" expanded="false" />
-                <element signature="e#3713#3714#0" expanded="false" />
-                <element signature="e#3854#3855#0" expanded="false" />
-                <element signature="e#3945#3946#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObjectUtils.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/software/repository/com/u17173/treasurebox/treasurebox-utils/1.3.1-SNAPSHOT/treasurebox-utils-1.3.1-SNAPSHOT-sources.jar!/com/u17173/treasurebox/utils/object/ObjectUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="253" column="0" lean-forward="false" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BeanUtils.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/software/repository/com/u17173/treasurebox/treasurebox-utils/1.3.1-SNAPSHOT/treasurebox-utils-1.3.1-SNAPSHOT-sources.jar!/com/u17173/treasurebox/utils/object/BeanUtils.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -138,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/ftrade-web/src/test/java/com/littlehui/ftrade/tests/services/MailServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+              <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -203,7 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.MD" />
         <option value="$PROJECT_DIR$/ftrade-dto/src/main/java/com/littlehui/ftrade/dto/web/ResponseFactory.java" />
         <option value="$PROJECT_DIR$/ftrade-web/src/main/java/com/littlehui/ftrade/web/handler/ControllerExceptionHandler.java" />
         <option value="$PROJECT_DIR$/ftrade-web/src/main/java/com/littlehui/ftrade/web/controller/ConsumerController.java" />
@@ -252,6 +231,8 @@
         <option value="$PROJECT_DIR$/ftrade-mail/src/main/java/com/littlehui/ftrade/mail/dao/InvaliableConsumerDetailManager.java" />
         <option value="$PROJECT_DIR$/ftrade-mail/src/main/java/com/littlehui/ftrade/mail/dao/AvaliableConsumerDetailManager.java" />
         <option value="$PROJECT_DIR$/ftrade-mail/src/main/java/com/littlehui/ftrade/mail/service/MailService.java" />
+        <option value="$PROJECT_DIR$/README.MD" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -307,6 +288,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ftrade-platform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ftrade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ftrade-front" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -334,11 +329,11 @@
       <recent name="com.lilhui.ftrade.mail.bean" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/ftrade-mail/src/main/resources" />
       <recent name="$PROJECT_DIR$/ftrade-mail/src/main/java" />
       <recent name="$PROJECT_DIR$/ftrade-mail/src/test/java" />
       <recent name="$PROJECT_DIR$/docs" />
-      <recent name="$PROJECT_DIR$/ftrade-front" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.MailServiceTest.validAllEmailTests">
@@ -965,7 +960,7 @@
       <workItem from="1554192902113" duration="16489000" />
       <workItem from="1555659661950" duration="7205000" />
       <workItem from="1556098647408" duration="18627000" />
-      <workItem from="1556188321876" duration="4596000" />
+      <workItem from="1556188321876" duration="7816000" />
     </task>
     <servers />
   </component>
@@ -1002,11 +997,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51076000" />
+    <option name="totallyTimeSpent" value="54296000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1033,8 +1028,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17453505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17453505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Reviews" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1080,15 +1075,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/software/repository/com/u17173/treasurebox/treasurebox-auth/1.3-SNAPSHOT/treasurebox-auth-1.3-SNAPSHOT-sources.jar!/com/u17173/treasurebox/auth/config/LadpConfig.java" />
-    <entry file="jar://$USER_HOME$/software/repository/com/u17173/treasurebox/treasurebox-auth-mongo/1.3-SNAPSHOT/treasurebox-auth-mongo-1.3-SNAPSHOT-sources.jar!/com/u17173/treasurebox/auth/mongo/service/MongoAuthUserService.java" />
-    <entry file="jar://$USER_HOME$/software/repository/com/u17173/treasurebox/treasurebox-auth/1.3.1-SNAPSHOT/treasurebox-auth-1.3.1-SNAPSHOT.jar!/com/u17173/treasurebox/auth/service/UserValidateService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/software/repository/com/u17173/treasurebox/treasurebox-auth/1.3.1-SNAPSHOT/treasurebox-auth-1.3.1-SNAPSHOT-sources.jar!/com/u17173/treasurebox/auth/service/UserValidateService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -1733,7 +1719,7 @@
     <entry file="file://$PROJECT_DIR$/ftrade-mail/src/main/java/com/littlehui/ftrade/mail/dao/AvaliableConsumerDetailManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="25" column="23" lean-forward="true" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1753,7 +1739,7 @@
     <entry file="file://$PROJECT_DIR$/ftrade-web/src/test/java/com/littlehui/ftrade/tests/services/MailServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+          <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1788,6 +1774,33 @@
             <element signature="e#0#898#0" expanded="true" />
             <element signature="e#837#838#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.MD">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gitpushauto.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="82" column="5" lean-forward="true" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
