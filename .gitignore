@@ -96,3 +96,4 @@ derby.log
 **/resources/rebel.xml
 product/
 env/
+ftrade-front/node_modules/
