@@ -34,9 +34,9 @@ public class MailServiceTest {
 /*
         mailService.validAllEmailBatch("66", 10);
 */
-        mailService.validAllEmailBatch("67", 10);
+/*        mailService.validAllEmailBatch("67", 10);
         mailService.validAllEmailBatch("68", 10);
-        mailService.validAllEmailBatch("69", 10);
+        mailService.validAllEmailBatch("69", 10);*/
         mailService.validAllEmailBatch("70", 10);
         mailService.validAllEmailBatch("71", 10);
         mailService.validAllEmailBatch("72", 10);

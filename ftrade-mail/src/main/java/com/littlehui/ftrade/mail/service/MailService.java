@@ -54,6 +54,7 @@ public class MailService {
         }
         while (true) {
             if (MailService.alreadNum.intValue() == markTotal) {
+                MailService.alreadNum = new AtomicInteger(0);
                 break;
             }
         }
