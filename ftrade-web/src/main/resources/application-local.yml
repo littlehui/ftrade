@@ -25,3 +25,39 @@ app:
   config:
     ldap:
       notLdapFlag: ${local.app.config.ldap.notLdapFlag}
+mail:
+    config:
+      host: ${local.mail.host}
+    config:
+      listUsers[0]:
+        name: amila@idaymay.com
+        password: 7397495keep
+      listUsers[1]:
+        name: tasy@idaymay.com
+        password: 7397495keep
+      listUsers[2]:
+        name: yoyo@idaymay.com
+        password: 7397495keep
+      listUsers[3]:
+        name: syla@idaymay.com
+        password: 7397495keep
+      listUsers[4]:
+        name: liquie@idaymay.com
+        password: 7397495keep
+      listUsers[5]:
+        name: jusi@idaymay.com
+        password: 7397495keep
+      listUsers[6]:
+        name: mina@idaymay.com
+        password: 7397495keep
+      listUsers[7]:
+        name: linda@idaymay.com
+        password: 7397495keep
+      listUsers[8]:
+        name: vensen@idaymay.com
+        password: 7397495keep
+      listUsers[9]:
+        name: vivi@idaymay.com
+        password: 7397495keep
+
+      mailTemplateHtml: <div><div yne-bulb-block=\"paragraph\" style=\"line-height: 1.875;\"><span style=\"white-space: pre-wrap; font-size: 13px; font-family: &quot;Microsoft YaHei&quot;, STXihei; color: rgb(51, 51, 51); background-color: rgb(255, 255, 255);\">Dear </span><font color=\"#333333\" face=\"Microsoft YaHei, STXihei\"><span style=\"font-size: 13px; white-space: pre-wrap;\">_FULL_NAME_</span></font><span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); font-family: &quot;Microsoft YaHei&quot;, STXihei; font-size: 13px;\">,</span></div><div yne-bulb-block=\"paragraph\" style=\"white-space: pre-wrap; line-height: 1.5;\"><span style=\"font-size:13px;font-family:Microsoft YaHei,STXihei;color:#333333;background-color:#ffffff\">Good day.</span></div><div yne-bulb-block=\"paragraph\" style=\"white-space: pre-wrap; line-height: 1.5;\"><span style=\"font-size:13px;font-family:Microsoft YaHei,STXihei;color:#333333;background-color:#ffffff\">We,&nbsp;Fuzhou Idaymay Electrical Technology&nbsp;Co. Ltd, is professional in&nbsp;electrical&nbsp;for nearlly&nbsp;12&nbsp;years, </span></div><div yne-bulb-block=\"paragraph\" style=\"white-space: pre-wrap; line-height: 1.5;\"><span style=\"font-size:13px;font-family:Microsoft YaHei,STXihei;color:#333333;background-color:#ffffff\">covering&nbsp;</span><span style=\"font-size:13px;font-family:Microsoft YaHei,STXihei;color:#333333;background-color:#ffffff;font-weight:bold\">Lampholders, Pendant Light,, etc.</span></div><div yne-bulb-block=\"paragraph\" style=\"white-space: pre-wrap; line-height: 1.5;\"><span style=\"font-size:13px;font-family:Microsoft YaHei,STXihei;color:#333333;background-color:#ffffff\">Should you wanna know more about our company, pls visit&nbsp;</span><span style=\"font-size:13px;font-family:Microsoft YaHei,STXihei;color:#0000ff;background-color:#ffffff;font-weight:bold\">www.idaymay.com</span></div><div yne-bulb-block=\"paragraph\" style=\"white-space: pre-wrap; line-height: 1.5;\"><span style=\"font-size:13px;font-family:Microsoft YaHei,STXihei;color:#333333;background-color:#ffffff\">Any comments, that'll be appreciated!</span></div><div yne-bulb-block=\"paragraph\" style=\"white-space: pre-wrap; line-height: 1.5;\"><span style=\"font-size:13px;font-family:Microsoft YaHei,STXihei;color:#333333;background-color:#ffffff\">Thanks&nbsp;and Best Regards,</span></div><div yne-bulb-block=\"paragraph\" style=\"white-space: pre-wrap; line-height: 1.5;\"><span style=\"font-size:13px;font-family:Microsoft YaHei,STXihei;color:#333333;background-color:#ffffff\">Lora Chen</span></div></div>--<br><div id=\"spnEditorSign\"><p class=\"MsoNormal\" style=\"margin-top: 5pt; margin-bottom: 5pt;\"><span style=\"font-size: 12pt;\"><b style=\"\"><font face=\"Comic Sans MS\">Lora Chen</font></b></span></p><p class=\"MsoNormal\" style=\"margin-top: 5pt; margin-bottom: 5pt;\"><b><span style=\"font-family: Calibri; font-size: 12pt;\">FUZHOU IDAYMAY ELECTRICAL&nbsp;TECHNOLOGY&nbsp;CO.,LTD.</span><span style=\"mso-spacerun:'yes';font-family:Arial;mso-fareast-font-family:宋体;font-size:10.5000pt;mso-font-kerning:1.0000pt;\"><o:p></o:p></span></b></p><font color=\"#0000f0\" face=\"Calibri\"><span style=\"font-size: 16px;\"><b>www.idaymay.com</b></span></font><br><p class=\"MsoNormal\" style=\"margin-top: 5pt; margin-bottom: 5pt;\"><b><span style=\"font-family: Calibri; font-size: 12pt;\">Skype:&nbsp;</span></b><a href=\"mailto:lora@idaymay.com\"><b><u><span class=\"15\" style=\"font-family: Calibri; color: rgb(0, 0, 255); font-size: 12pt;\">lora@idaymay.com</span></u></b></a><span style=\"mso-spacerun:'yes';font-family:Arial;mso-fareast-font-family:宋体;font-size:10.5000pt;mso-font-kerning:1.0000pt;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-top: 5pt; margin-bottom: 5pt;\"><b><span style=\"font-family: Calibri; font-size: 12pt;\">Tel:+86 15705959502</span></b><span style=\"mso-spacerun:'yes';font-family:Arial;mso-fareast-font-family:宋体;font-size:10.5000pt;mso-font-kerning:1.0000pt;\"><o:p></o:p></span></p><p class=\"MsoNormal\" style=\"margin-top: 5pt; margin-bottom: 5pt;\"><b><span style=\"font-family: Calibri; font-size: 12pt;\"><br></span></b></p></div>
