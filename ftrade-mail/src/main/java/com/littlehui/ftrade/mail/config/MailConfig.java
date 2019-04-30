@@ -3,11 +3,9 @@ package com.littlehui.ftrade.mail.config;
 import cn.hutool.setting.dialect.Props;
 import com.littlehui.ftrade.mail.bean.MailUser;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 import java.util.List;

@@ -17,6 +17,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import javax.mail.internet.MimeMessage;
+import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -94,7 +95,10 @@ public class MailService {
         MimeMessage message = mailSender.createMimeMessage();
         try {
             MimeMessageHelper helper	= new MimeMessageHelper(message,true,"utf-8");
-            helper.setFrom(sendFromMailAddress);
+            helper.setFrom(sendFromMailAddress, "lora");
+            helper.setCc("lora@idaymay.com");
+            helper.setCc("emily@idaymay.com");
+            //helper.setFrom(sendFromMailAddress);
             helper.setTo(sendToAddress);
             helper.setSubject(subect);
             helper.setText(context, true);   //内容
@@ -104,6 +108,8 @@ public class MailService {
         } catch (javax.mail.MessagingException e) {
             e.printStackTrace();
             return true;
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
         try {
             mailSender.send(message);
