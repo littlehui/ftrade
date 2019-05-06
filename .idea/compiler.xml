@@ -2,9 +2,27 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true">
+      <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for ftrade-dto" enabled="true">
+        <sourceOutputDir name="target\generated-sources\annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ftrade-dto" />
       </profile>
       <profile default="false" name="Annotation profile for ftrade-web" enabled="true">
         <sourceOutputDir name="target\generated-sources\annotations" />
@@ -20,12 +38,12 @@
         <processorPath useClasspath="true" />
         <module name="ftrade-services" />
       </profile>
-      <profile default="false" name="Annotation profile for ftrade-dto" enabled="true">
+      <profile default="false" name="Annotation profile for ftrade-common" enabled="true">
         <sourceOutputDir name="target\generated-sources\annotations" />
         <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="ftrade-dto" />
+        <module name="ftrade-common" />
       </profile>
       <profile default="false" name="Annotation profile for ftrade-mail" enabled="true">
         <sourceOutputDir name="target\generated-sources\annotations" />
@@ -34,19 +52,12 @@
         <processorPath useClasspath="true" />
         <module name="ftrade-mail" />
       </profile>
-      <profile default="false" name="Annotation profile for ftrade-common" enabled="true">
-        <sourceOutputDir name="target\generated-sources\annotations" />
-        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="ftrade-common" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ftrade" target="1.8" />
       <module name="ftrade-common" target="1.8" />
       <module name="ftrade-dto" target="1.8" />
       <module name="ftrade-mail" target="1.8" />
+      <module name="ftrade-platform" target="1.8" />
       <module name="ftrade-services" target="1.8" />
       <module name="ftrade-web" target="1.8" />
     </bytecodeTargetLevel>

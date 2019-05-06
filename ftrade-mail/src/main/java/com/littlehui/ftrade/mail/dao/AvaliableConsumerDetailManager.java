@@ -38,7 +38,22 @@ public class AvaliableConsumerDetailManager extends AbstractManager<AvaliableCon
 
     public Paged<AvaliableConsumerDetail> queryConsumerDetailsBatch(int pageNo, Integer pageSize, Integer limitCount, String batch) {
         Query query = new Query();
-        Criteria criteria = new Criteria().and("sendCount").lt(limitCount).and("batchInfo").is(batch);
+        Criteria criteria = new Criteria()
+                .and("sendCount").lt(limitCount)
+                .and("batchInfo").is(batch)
+                .and("deleteFlag").ne(true);
         query.addCriteria(criteria);
-        return this.findPage(query, pageNo, pageSize);    }
+        return this.findPage(query, pageNo, pageSize);
+    }
+
+    public void removeByMail(String mail) {
+        Query query = new Query();
+        Criteria criteria = new Criteria().and("mail").is(mail);
+        query.addCriteria(criteria);
+        AvaliableConsumerDetail avaliableConsumerDetail = this.get(query);
+        if (avaliableConsumerDetail != null) {
+            avaliableConsumerDetail.setDeleteFlag(true);
+            this.save(avaliableConsumerDetail);
+        }
+    }
 }

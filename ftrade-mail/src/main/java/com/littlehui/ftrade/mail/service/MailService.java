@@ -96,7 +96,7 @@ public class MailService {
         try {
             MimeMessageHelper helper	= new MimeMessageHelper(message,true,"utf-8");
             helper.setFrom(sendFromMailAddress, "lora");
-            helper.setCc("lora@idaymay.com");
+            //helper.setCc("lora@idaymay.com");
             helper.setCc("emily@idaymay.com");
             //helper.setFrom(sendFromMailAddress);
             helper.setTo(sendToAddress);
@@ -116,8 +116,16 @@ public class MailService {
             return true;
         } catch (Exception e) {
             e.printStackTrace();
+            //avaliableConsumerDetailManager.removeByMail(sendToAddress);
             return false;
         }
+    }
+
+    private void mailToInvaliable(String mail) {
+       //AvaliableConsumerDetail avaliableConsumerDetail = avaliableConsumerDetailManager.getBymail(mail);
+       //InvaliableConsumerDetail invaliableConsumerDetail = ObjectUtils.convertObj(avaliableConsumerDetail, InvaliableConsumerDetail.class);
+       //invaliableConsumerDetail.setDeleteFlag();
+       //invaliableConsumerDetailManager.save(invaliableConsumerDetail);
     }
 
     public void validAllEmailBatch(String batch, int thread) {
