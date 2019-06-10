@@ -4,7 +4,7 @@
       <el-container>
         <el-header height="80px">
           <div class="navbar-header" >
-            <a class="navbar-brand" href="/">推荐平台<span>1.0</span></a>
+            <a class="navbar-brand" href="/">FTRADE<span>1.0</span></a>
           </div>
           <div class="navbar-menu">
             <el-menu :default-active="defaultTopMenuActive" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">

@@ -26,5 +26,9 @@
             <artifactId>spring-data-mongodb</artifactId>
             <version>${spring-data-version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.u17173.treasurebox</groupId>
+            <artifactId>treasurebox-utils</artifactId>
+        </dependency>
     </dependencies>
 </project>

@@ -64,6 +64,6 @@ public class MailServiceTest {
 
     @Test
     public void sendMailTests() {
-        mailService.sendMailBatch("61");
+        mailService.sendMailBatch("67");
     }
 }

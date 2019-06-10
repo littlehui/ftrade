@@ -23,8 +23,8 @@
 </template>
 
 <script>
-  import * as types from '../../../store/mutation-types'
-  import {mapActions} from 'vuex/types'
+  import * as types from '../../store/mutation-types'
+  import {mapActions} from 'vuex'
 
   export default {
     data () {

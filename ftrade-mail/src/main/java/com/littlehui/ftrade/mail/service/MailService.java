@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.mail.internet.MimeMessage;
 import java.io.UnsupportedEncodingException;
@@ -72,7 +73,12 @@ public class MailService {
                 if (toName == null || "".equals(toName)) {
                     toName = consumerDetail.getCompanyName();
                 }
-                String subject = "Re: " + consumerDetail.getMan();
+                String titleSubfix = "";
+                titleSubfix = consumerDetail.getMan();
+                if (StringUtils.isEmpty(titleSubfix)) {
+                    titleSubfix = consumerDetail.getCompanyName();
+                }
+                String subject = "Re: " + titleSubfix;
                 boolean result = this.simpleMailWithHtml(consumerDetail.getMail(), mail, subject, toName, mail, password);
                 if (result) {
                     this.addSendCount(consumerDetail);
@@ -97,7 +103,7 @@ public class MailService {
             MimeMessageHelper helper	= new MimeMessageHelper(message,true,"utf-8");
             helper.setFrom(sendFromMailAddress, "lora");
             //helper.setCc("lora@idaymay.com");
-            helper.setCc("emily@idaymay.com");
+            //helper.setCc("emilychow@idaymay.com");
             //helper.setFrom(sendFromMailAddress);
             helper.setTo(sendToAddress);
             helper.setSubject(subect);
