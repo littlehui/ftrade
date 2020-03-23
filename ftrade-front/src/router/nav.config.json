@@ -1,0 +1,27 @@
+[
+  {
+    "name": "consumer-manager",
+    "title": "客户管理",
+    "url": "/consumer",
+    "resourceKey": "consumer:manager",
+    "priority": 1,
+    "subMenus": [
+      {
+        "title": "初始客户",
+        "name": "consumer-init-list",
+        "url": "/consumer-init-list",
+        "resourceKey": "consumer:manager:initList",
+        "priority": 11,
+        "pageLocation": "consumer/init-list.vue"
+      },
+      {
+        "title": "正常客户",
+        "name": "consumer-available-list",
+        "url": "/consumer-available-list",
+        "resourceKey": "consumer:manager:availableList",
+        "priority": 12,
+        "pageLocation": "consumer/available-list.vue"
+      }
+    ]
+  }
+]

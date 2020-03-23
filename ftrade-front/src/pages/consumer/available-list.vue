@@ -71,11 +71,11 @@
 </template>
 
 <script>
-  import _ from 'lodash'
-  import moment from 'moment'
+import _ from 'lodash'
+import moment from 'moment'
 
   export default {
-    data () {
+  data () {
       return {
         params: {
           pagination: {
@@ -210,8 +210,8 @@
           this.fileInfo.etag = resp.data.data.etag
           this.fileInfo.fileUrl = resp.data.data.fileUrl
           this.fileInfo.fileSize = this.size(resp.data.data.fileSize)
-          this.fileInfoFormVisible = true
-        }, (resp) => {
+        this.fileInfoFormVisible = true
+      }, (resp) => {
           console.log(resp)
         })
       }

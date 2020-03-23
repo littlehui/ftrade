@@ -19,11 +19,13 @@ const registerRoute = (config) => {
           path: topMenu.url + secondMenu.url,
           meta,
           component: () => import(`../pages/${secondMenu.pageLocation}`)
-      })
+        })
       } else {
         for (const thirdMenu of secondMenu.subMenus) {
           const currComponent = () =>
+          // eslint-disable-next-line func-call-spacing
           import
+            // eslint-disable-next-line no-unexpected-multiline
           (`../pages/${thirdMenu.pageLocation}`)
           const meta = {}
           let breadcrumbs = []

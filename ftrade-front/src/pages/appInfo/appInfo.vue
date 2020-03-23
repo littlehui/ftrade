@@ -149,8 +149,8 @@
 
 <script>
   import _ from 'lodash'
-  import moment from 'moment/moment'
-  import {mapGetters} from 'vuex/types'
+  import moment from 'moment'
+  import {mapGetters} from 'vuex'
 
   export default {
     data () {

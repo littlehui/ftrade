@@ -24,7 +24,7 @@ const state = {
   nickname: 'littlehui', // 昵称
   roleCode: 'Admin',
   authCode: 'Admin',
-  userResourceKeys: ["log:manager"],
+  userResourceKeys: ["consumer:manager"],
   userResourceKeyMap: {}
 }
 
