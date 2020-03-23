@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ftrade.iml" filepath="$PROJECT_DIR$/ftrade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ftrade.iml" filepath="$PROJECT_DIR$/.idea/ftrade.iml" />
       <module fileurl="file://$PROJECT_DIR$/ftrade-common/ftrade-common.iml" filepath="$PROJECT_DIR$/ftrade-common/ftrade-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/ftrade-dto/ftrade-dto.iml" filepath="$PROJECT_DIR$/ftrade-dto/ftrade-dto.iml" />
       <module fileurl="file://$PROJECT_DIR$/ftrade-mail/ftrade-mail.iml" filepath="$PROJECT_DIR$/ftrade-mail/ftrade-mail.iml" />

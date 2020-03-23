@@ -34,23 +34,36 @@ public class MailServiceTest {
 /*
         mailService.validAllEmailBatch("66", 10);
 */
-        mailService.validAllEmailBatch("67", 10);
+/*        mailService.validAllEmailBatch("67", 10);
         mailService.validAllEmailBatch("68", 10);
-        mailService.validAllEmailBatch("69", 10);
-        mailService.validAllEmailBatch("70", 10);
+        mailService.validAllEmailBatch("69", 10);*/
+/*        mailService.validAllEmailBatch("70", 10);
         mailService.validAllEmailBatch("71", 10);
         mailService.validAllEmailBatch("72", 10);
         mailService.validAllEmailBatch("73 ", 10);
         mailService.validAllEmailBatch("74", 10);
         mailService.validAllEmailBatch("75", 10);
-        mailService.validAllEmailBatch("76", 10);
-        mailService.validAllEmailBatch("77", 10);
-        mailService.validAllEmailBatch("78", 10);
-        mailService.validAllEmailBatch("79", 10);
+        mailService.validAllEmailBatch("76", 10);*/
+/*        mailService.validAllEmailBatch("77", 10);*/
+/*        mailService.validAllEmailBatch("78", 10);
+        mailService.validAllEmailBatch("79", 10);*/
+        mailService.validAllEmailBatch("73", 10);
     }
 
     @Test
     public void testQUery() {
         initialConsumerDetailManager.findByBatchAndNonTested("67");
+    }
+
+    @Test
+    public void testMailWithHtml() {
+        String from = "littlehui@idaymay.com";
+        mailService.simpleMailWithHtml("812699887@qq.com", from, "testSubject", "testName", "littlehui@idaymay.com", "7397495keep");
+    }
+
+
+    @Test
+    public void sendMailTests() {
+        mailService.sendMailBatch("61");
     }
 }

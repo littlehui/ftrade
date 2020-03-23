@@ -97,3 +97,4 @@ derby.log
 product/
 env/
 ftrade-front/node_modules/
+/.idea/
