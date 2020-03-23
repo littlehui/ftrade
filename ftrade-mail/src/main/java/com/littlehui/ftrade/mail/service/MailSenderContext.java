@@ -2,7 +2,6 @@ package com.littlehui.ftrade.mail.service;
 
 import com.littlehui.ftrade.mail.bean.MailUser;
 import com.littlehui.ftrade.mail.config.MailConfig;
-import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
 
 import java.util.ArrayList;
 import java.util.List;
