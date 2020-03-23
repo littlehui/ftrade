@@ -27,6 +27,8 @@ public class MailConfig {
 
     String host;
 
+    String mailTemplateHtml;
+
     @Bean
     public JavaMailSenderImpl mailSender() {
         JavaMailSenderImpl javaMailSender = new JavaMailSenderImpl();
