@@ -40,7 +40,7 @@ switch (process.env.NODE_ENV) {
     axios.defaults.baseURL = ''
     break
   default:
-    axios.defaults.baseURL = 'http://localhost:8089'
+    axios.defaults.baseURL = 'http://localhost:8091'
     break
 }
 
