@@ -43,11 +43,13 @@ public class ConsumerDetail extends MongoBaseEntity {
     private Boolean available;
 
     /**
-     * 1
-     * 2
-     * 3
-     * 4
+     * 1   询盘1
+     * 2   询盘2
+     * 3   询盘3
+     * 4   离线邮件提取的邮箱
      * 5
+     * 6X  展会Excel导入的
+     * 7X  展会Excel导入的
      */
     private String batchInfo;
 

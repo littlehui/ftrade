@@ -2,6 +2,7 @@ package com.littlehui.ftrade.mail.service;
 
 import com.littlehui.ftrade.mail.bean.MailUser;
 import com.littlehui.ftrade.mail.config.MailConfig;
+import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,8 @@ public class MailSenderContext {
 
     private String batch;
 
+    public static ThreadLocal<Integer> liteSendCount = new ThreadLocal<>();
+
     public MailSenderContext(MailService mailService, MailConfig mailConfig, String batch) {
         this.mailService = mailService;
         this.mailConfig = mailConfig;
@@ -25,6 +28,9 @@ public class MailSenderContext {
     }
 
     public void doSendMail() {
+        if (liteSendCount.get() == null) {
+            liteSendCount.set(1);
+        }
         List<Thread> mailSendThreads = new ArrayList<Thread>();
         List<MailUser> mailUsers = mailConfig.getListUsers();
 
@@ -52,9 +58,10 @@ public class MailSenderContext {
             this.password = password;
         }
 
+        @Override
         public void run() {
             for (int i = 0; i<90; i++) {
-                mailService.sendEmailInner(1,1, username, password, batch);
+                mailService.sendEmailInner(1,liteSendCount.get(), username, password, batch);
                 Long randLong = new Random().nextLong();
                 Long randMills = randLong%(60 * 1000);
                 Long currentMills = System.currentTimeMillis();
@@ -62,7 +69,7 @@ public class MailSenderContext {
                 while (true) {
                     Long newCurrnetMills = System.currentTimeMillis();
                     if (newCurrnetMills > nextMills) {
-                        mailService.sendEmailInner(1, 1, username, password, batch);
+                        mailService.sendEmailInner(1, liteSendCount.get(), username, password, batch);
                         break;
                     }
                 }

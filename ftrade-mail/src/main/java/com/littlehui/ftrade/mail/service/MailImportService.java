@@ -1,11 +1,17 @@
 package com.littlehui.ftrade.mail.service;
 
+import com.littlehui.ftrade.mail.bean.AvaliableConsumerDetail;
 import com.littlehui.ftrade.mail.bean.ConsumerDetail;
 import com.littlehui.ftrade.mail.bean.InitialConsumerDetail;
+import com.littlehui.ftrade.mail.dao.AvaliableConsumerDetailManager;
+import com.littlehui.ftrade.mail.dao.ConsumerDetailManager;
 import com.littlehui.ftrade.mail.dao.InitialConsumerDetailManager;
 import com.u17173.treasurebox.utils.excels.ExcelResult;
 import com.u17173.treasurebox.utils.excels.ExcelUtil;
+import com.u17173.treasurebox.utils.object.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,9 +29,23 @@ import java.util.regex.Pattern;
 @Service
 public class MailImportService {
 
-
     @Autowired
     InitialConsumerDetailManager initialConsumerDetailManager;
+
+    @Autowired
+    ConsumerDetailManager consumerDetailManager;
+
+    @Autowired
+    AvaliableConsumerDetailManager avaliableConsumerDetailManager;
+
+    public void consumerDetailToAvaliableComsumerDetail() {
+        Query query = new Query();
+        query.addCriteria(new Criteria().and("sendCount").is(1));
+        List<ConsumerDetail> consumerDetailList = consumerDetailManager.findList(query);
+        consumerDetailList.forEach(f -> f.setId(null));
+        List<AvaliableConsumerDetail> avaliableConsumerDetails = ObjectUtils.convertList(consumerDetailList, AvaliableConsumerDetail.class);
+        avaliableConsumerDetailManager.saveCollection(avaliableConsumerDetails);
+    }
 
     public void importCompanyDetailFromXls(String filePath, int cellPerRow) {
         ExcelResult excelResult = ExcelUtil.readExcelByPath(filePath, cellPerRow, 2);

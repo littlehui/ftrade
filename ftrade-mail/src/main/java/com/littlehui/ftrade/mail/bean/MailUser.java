@@ -11,4 +11,6 @@ public class MailUser {
     private String user;
 
     private String password;
+
+    private String sign;
 }

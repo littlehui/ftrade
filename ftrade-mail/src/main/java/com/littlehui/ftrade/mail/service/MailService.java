@@ -67,7 +67,7 @@ public class MailService {
         } else {
             page = avaliableConsumerDetailManager.queryConsumerDetails(1, limit, limitCount);
         }
-        if (page.getListData() != null && page.getListData().size() > 0)
+        if (page.getListData() != null && page.getListData().size() > 0) {
             for (AvaliableConsumerDetail consumerDetail : page.getListData()) {
                 String toName = consumerDetail.getMan();
                 if (toName == null || "".equals(toName)) {
@@ -78,12 +78,13 @@ public class MailService {
                 if (StringUtils.isEmpty(titleSubfix)) {
                     titleSubfix = consumerDetail.getCompanyName();
                 }
-                String subject = "Re: " + titleSubfix;
+                String subject = "Re: " + titleSubfix + "-Disposable MASK,N95";
                 boolean result = this.simpleMailWithHtml(consumerDetail.getMail(), mail, subject, toName, mail, password);
                 if (result) {
                     this.addSendCount(consumerDetail);
                 }
             }
+        }
     }
 
     public void addSendCount(AvaliableConsumerDetail consumerDetail) {
@@ -100,7 +101,7 @@ public class MailService {
         //发送带格式的邮件
         MimeMessage message = mailSender.createMimeMessage();
         try {
-            MimeMessageHelper helper	= new MimeMessageHelper(message,true,"utf-8");
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
             helper.setFrom(sendFromMailAddress, "lora");
             //helper.setCc("lora@idaymay.com");
             //helper.setCc("emilychow@idaymay.com");
@@ -128,16 +129,16 @@ public class MailService {
     }
 
     private void mailToInvaliable(String mail) {
-       //AvaliableConsumerDetail avaliableConsumerDetail = avaliableConsumerDetailManager.getBymail(mail);
-       //InvaliableConsumerDetail invaliableConsumerDetail = ObjectUtils.convertObj(avaliableConsumerDetail, InvaliableConsumerDetail.class);
-       //invaliableConsumerDetail.setDeleteFlag();
-       //invaliableConsumerDetailManager.save(invaliableConsumerDetail);
+        //AvaliableConsumerDetail avaliableConsumerDetail = avaliableConsumerDetailManager.getBymail(mail);
+        //InvaliableConsumerDetail invaliableConsumerDetail = ObjectUtils.convertObj(avaliableConsumerDetail, InvaliableConsumerDetail.class);
+        //invaliableConsumerDetail.setDeleteFlag();
+        //invaliableConsumerDetailManager.save(invaliableConsumerDetail);
     }
 
     public void validAllEmailBatch(String batch, int thread) {
         List<InitialConsumerDetail> initialConsumerDetails = initialConsumerDetailManager.findByBatchAndNonTested(batch);
         int markTotal = thread == 0 ? 1 : thread;
-        for (int mark = 0; mark<markTotal; mark++) {
+        for (int mark = 0; mark < markTotal; mark++) {
             MailCheckThread mailCheckThread = new MailCheckThread(this, initialConsumerDetails, mark);
             mailCheckThread.start();
         }
@@ -159,7 +160,7 @@ public class MailService {
 
         Logger log = Logger.getLogger(MailCheckThread.class);
 
-        public MailCheckThread(MailService mailService,List<InitialConsumerDetail> companyDetails, int mark) {
+        public MailCheckThread(MailService mailService, List<InitialConsumerDetail> companyDetails, int mark) {
             this.mailService = mailService;
             this.companyDetails = companyDetails;
             this.mark = mark;
@@ -173,7 +174,7 @@ public class MailService {
                 String idString = companyDetail.getId();
                 String hexId = idString.substring(idString.length() - 3, idString.length() - 1);
                 Integer id = Integer.parseUnsignedInt(hexId, 16);
-                if (id%5 == mark) {
+                if (id % 5 == mark) {
                     log.info("mark = " + mark + "第" + i + "个开始");
                     log.info("mark = " + mark + "验证邮箱：" + companyDetail.getMail());
                     Boolean result = MailValid.valid(companyDetail.getMail(), "idaymay.com");
@@ -189,7 +190,7 @@ public class MailService {
                     }
                     initialConsumerDetailManager.save(companyDetail);
                     Long resultMills = System.currentTimeMillis();
-                    log.info("mark = " + mark + "耗时：" + (resultMills - startMills)/1000 + "秒");
+                    log.info("mark = " + mark + "耗时：" + (resultMills - startMills) / 1000 + "秒");
                     i++;
                 }
             }
@@ -197,7 +198,7 @@ public class MailService {
         }
     }
 
-    public static void main(String[]  args) {
+    public static void main(String[] args) {
         String hex = "3a";
         Integer id = Integer.parseUnsignedInt(hex, 16);
         System.out.println("this id is : " + id);
