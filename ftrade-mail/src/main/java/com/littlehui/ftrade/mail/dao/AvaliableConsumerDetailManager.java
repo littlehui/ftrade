@@ -2,13 +2,11 @@ package com.littlehui.ftrade.mail.dao;
 
 import com.littlehui.ftrade.dto.params.ConsumerQueryParam;
 import com.littlehui.ftrade.mail.bean.AvaliableConsumerDetail;
-import com.littlehui.ftrade.mail.bean.ConsumerDetail;
 import com.u17173.treasurebox.auth.mongo.dao.AbstractManager;
 import com.u17173.treasurebox.utils.query.Paged;
-import com.u17173.treasurebox.utils.query.PagedOperator;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.querydsl.QuerydslUtils;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -47,6 +45,18 @@ public class AvaliableConsumerDetailManager extends AbstractManager<AvaliableCon
                 .and("deleteFlag").ne(true);
         query.addCriteria(criteria);
         return this.findPage(query, pageNo, pageSize);
+    }
+
+    public AvaliableConsumerDetail findOneAndSetSendingFlag(Integer limitCount, String batch) {
+        Query query = new Query();
+        Criteria criteria = new Criteria()
+                .and("sendCount").lt(limitCount)
+                .and("batchInfo").is(batch)
+                .and("deleteFlag").ne(true)
+                .and("sendingFlag").ne(true);
+        query.addCriteria(criteria);
+        Update update = new Update().set("sendingFlag", true);
+        return this.findAndModify(query, update);
     }
 
     public Paged<AvaliableConsumerDetail> queryByPage(ConsumerQueryParam consumerQueryParam) {

@@ -2,6 +2,7 @@ package com.littlehui.ftrade.tests.services;
 
 import com.littlehui.ftrade.mail.dao.InitialConsumerDetailManager;
 import com.littlehui.ftrade.mail.service.MailSenderContext;
+import com.littlehui.ftrade.mail.service.MailSenderThreadHelper;
 import com.littlehui.ftrade.mail.service.MailService;
 import com.littlehui.ftrade.web.FtradeWebApplication;
 import org.junit.Test;
@@ -65,7 +66,9 @@ public class MailServiceTest {
 
     @Test
     public void sendMailTests() {
-        MailSenderContext.liteSendCount.set(2);
+        MailSenderThreadHelper.init(10,2, 2);
         mailService.sendMailBatch("1");
+        while (!MailSenderThreadHelper.allFinishFlag()) {
+        }
     }
 }

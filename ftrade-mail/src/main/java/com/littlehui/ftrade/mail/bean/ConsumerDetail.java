@@ -54,4 +54,6 @@ public class ConsumerDetail extends MongoBaseEntity {
     private String batchInfo;
 
     private Boolean testedFlag;
+
+    private Boolean sendingFlag;
 }
