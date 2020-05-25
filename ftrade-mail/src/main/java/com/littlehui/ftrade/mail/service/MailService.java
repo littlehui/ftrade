@@ -33,6 +33,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class MailService {
 
+    private Logger logger = Logger.getLogger(MailService.class);
+
     static AtomicInteger alreadNum = new AtomicInteger(0);
 
     @Autowired
@@ -57,10 +59,53 @@ public class MailService {
 
     public void sendMailBatch(String batch) {
         MailSenderContext mailSenderContext = new MailSenderContext(this, mailConfig, batch);
-        mailSenderContext.doSendMail();
+        mailSenderContext.startSendMailTask();
     }
 
-    public void sendEmailInner(Integer limit, Integer limitCount, String mail, String password, String batch) {
+    public void sandBatchOneEmailInner(Integer limitCount, String mail, String password, String batch) {
+        AvaliableConsumerDetail avaliableConsumerDetail = avaliableConsumerDetailManager.findOneAndSetSendingFlag(limitCount, batch);
+        this.doSendMail(avaliableConsumerDetail, mail, password);
+    }
+
+    private void doSendMail(AvaliableConsumerDetail avaliableConsumerDetail, String mail, String password) {
+        try {
+            boolean result = this.sendEmail(avaliableConsumerDetail, mail, password);
+            if (result) {
+                this.afterSended(avaliableConsumerDetail);
+            }
+        } catch (Exception e) {
+            logger.error(mail + "--发送失败：" + e.getCause());
+            throw e;
+        } finally {
+            //还原
+            if (avaliableConsumerDetail != null) {
+                this.resetSendingFlag(avaliableConsumerDetail);
+            }
+        }
+    }
+
+    private void resetSendingFlag(AvaliableConsumerDetail avaliableConsumerDetail) {
+        avaliableConsumerDetail.setSendingFlag(false);
+        avaliableConsumerDetail.setSendTime(new Timestamp(System.currentTimeMillis()));
+        avaliableConsumerDetailManager.save(avaliableConsumerDetail);
+    }
+
+    private boolean sendEmail(AvaliableConsumerDetail avaliableConsumerDetail, String mail, String password) {
+        String toName = avaliableConsumerDetail.getMan();
+        if (toName == null || "".equals(toName)) {
+            toName = avaliableConsumerDetail.getCompanyName();
+        }
+        String titleSubfix = "";
+        titleSubfix = avaliableConsumerDetail.getMan();
+        if (StringUtils.isEmpty(titleSubfix)) {
+            titleSubfix = avaliableConsumerDetail.getCompanyName();
+        }
+        String subject = "Re: " + titleSubfix + "-Disposable MASK,N95";
+        boolean result = this.simpleMailWithHtml(avaliableConsumerDetail.getMail(), mail, subject, toName, mail, password);
+        return result;
+    }
+
+    public void sendEmailInnerByPage(Integer limit, Integer limitCount, String mail, String password, String batch) {
         Paged<AvaliableConsumerDetail> page = null;
         if (batch != null) {
             page = avaliableConsumerDetailManager.queryConsumerDetailsBatch(1, limit, limitCount, batch);
@@ -69,27 +114,15 @@ public class MailService {
         }
         if (page.getListData() != null && page.getListData().size() > 0) {
             for (AvaliableConsumerDetail consumerDetail : page.getListData()) {
-                String toName = consumerDetail.getMan();
-                if (toName == null || "".equals(toName)) {
-                    toName = consumerDetail.getCompanyName();
-                }
-                String titleSubfix = "";
-                titleSubfix = consumerDetail.getMan();
-                if (StringUtils.isEmpty(titleSubfix)) {
-                    titleSubfix = consumerDetail.getCompanyName();
-                }
-                String subject = "Re: " + titleSubfix + "-Disposable MASK,N95";
-                boolean result = this.simpleMailWithHtml(consumerDetail.getMail(), mail, subject, toName, mail, password);
-                if (result) {
-                    this.addSendCount(consumerDetail);
-                }
+                this.doSendMail(consumerDetail, mail, password);
             }
         }
     }
 
-    public void addSendCount(AvaliableConsumerDetail consumerDetail) {
+    public void afterSended(AvaliableConsumerDetail consumerDetail) {
         int sendCount = consumerDetail.getSendCount() == null ? 1 : consumerDetail.getSendCount() + 1;
         consumerDetail.setSendCount(sendCount);
+        //consumerDetail.setSendingFlag(false);
         consumerDetail.setSendTime(new Timestamp(System.currentTimeMillis()));
         avaliableConsumerDetailManager.save(consumerDetail);
     }
@@ -119,12 +152,14 @@ public class MailService {
             e.printStackTrace();
         }
         try {
+            logger.info(sendFromMailAddress + "_正在向_" + sendToAddress + "发送邮件");
             mailSender.send(message);
+            logger.info(sendFromMailAddress + "_向_" + sendToAddress + "发送成功");
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            logger.error(sendFromMailAddress + "_向_" + sendToAddress + "邮件发送失败。");
             //avaliableConsumerDetailManager.removeByMail(sendToAddress);
-            return false;
+            throw new RuntimeException(sendFromMailAddress + "-TO-" + sendToAddress + "邮件发送失败。", e);
         }
     }
 
