@@ -68,4 +68,8 @@ public class MailServiceTest {
         MailSenderContext.liteSendCount.set(2);
         mailService.sendMailBatch("1");
     }
+
+    public static void main(String[] args) {
+
+    }
 }
