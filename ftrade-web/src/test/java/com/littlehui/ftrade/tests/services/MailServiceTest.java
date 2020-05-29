@@ -71,4 +71,8 @@ public class MailServiceTest {
         while (!MailSenderThreadHelper.allFinishFlag()) {
         }
     }
+
+    public static void main(String[] args) {
+
+    }
 }

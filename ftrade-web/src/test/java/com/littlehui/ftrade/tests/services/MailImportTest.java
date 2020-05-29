@@ -145,7 +145,7 @@ public class MailImportTest {
                         companyDetail.setBatchInfo("65");
                         return companyDetail;
                     }
-                },9);
+                }, 9);
     }
 
     @Test
@@ -364,6 +364,7 @@ public class MailImportTest {
                     }
                 }, 11);
     }
+
     @Test
     public void testImportMailDianZiXiaoFei() {
         //无法读取
@@ -482,5 +483,36 @@ public class MailImportTest {
                         return companyDetail;
                     }
                 }, 11);
+    }
+
+    @Test
+    public void testImportMailNew() {
+        mailImportService.importCompanyDetailFromXls("/Users/littlehui/WorkSpaces/Home/ftrade/docs/maillist/202005/email.xls"
+                , new CompanyDetailCreator() {
+
+                    @Override
+                    public InitialConsumerDetail createInitialConsumerDetail(String[] excelRow) {
+                        InitialConsumerDetail companyDetail = new InitialConsumerDetail();
+                        String UNKNOWN = "UNKNOWN";
+                        String mail = excelRow[1];
+                        mail = mail.replaceAll(";","");
+                        mail = mail.replaceAll(",", "");
+                        String[] mailSprlitArrays = mail.split("@");
+                        String man = mailSprlitArrays[0];
+                        companyDetail.setCompanyName(UNKNOWN);
+                        companyDetail.setMail(mail);
+                        companyDetail.setPhone(UNKNOWN);
+                        companyDetail.setFax(UNKNOWN);
+                        companyDetail.setCompanyAddress(UNKNOWN);
+                        companyDetail.setMan(man);
+                        companyDetail.setCountryOrZone(UNKNOWN);
+                        companyDetail.setNeedProduct(UNKNOWN);
+                        companyDetail.setWebSite(UNKNOWN);
+                        companyDetail.setSendCount(0);
+                        companyDetail.setBatchInfo("80");
+                        return companyDetail;
+                    }
+
+                }, 2);
     }
 }
