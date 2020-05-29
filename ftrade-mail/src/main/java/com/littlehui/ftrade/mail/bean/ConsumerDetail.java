@@ -50,6 +50,7 @@ public class ConsumerDetail extends MongoBaseEntity {
      * 5
      * 6X  展会Excel导入的
      * 7X  展会Excel导入的
+     * 8X  zlj哪里弄来的
      */
     private String batchInfo;
 

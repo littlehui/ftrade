@@ -486,15 +486,15 @@ public class MailImportTest {
     }
 
     @Test
-    public void testImportMailNew() {
-        mailImportService.importCompanyDetailFromXls("/Users/littlehui/WorkSpaces/Home/ftrade/docs/maillist/202005/email.xls"
+    public void testImportMailNew8X() {
+        mailImportService.importCompanyDetailFromXls("/Users/littlehui/WorkSpaces/Home/ftrade/docs/maillist/202005/email5.xlsx"
                 , new CompanyDetailCreator() {
 
                     @Override
                     public InitialConsumerDetail createInitialConsumerDetail(String[] excelRow) {
                         InitialConsumerDetail companyDetail = new InitialConsumerDetail();
                         String UNKNOWN = "UNKNOWN";
-                        String mail = excelRow[1];
+                        String mail = excelRow[0];
                         mail = mail.replaceAll(";","");
                         mail = mail.replaceAll(",", "");
                         String[] mailSprlitArrays = mail.split("@");
@@ -509,10 +509,41 @@ public class MailImportTest {
                         companyDetail.setNeedProduct(UNKNOWN);
                         companyDetail.setWebSite(UNKNOWN);
                         companyDetail.setSendCount(0);
-                        companyDetail.setBatchInfo("80");
+                        companyDetail.setBatchInfo("83");
                         return companyDetail;
                     }
 
-                }, 2);
+                }, 1);
+    }
+
+    @Test
+    public void testImportMailNew84() {
+        mailImportService.importCompanyDetailFromXls("/Users/littlehui/WorkSpaces/Home/ftrade/docs/maillist/202005/email4.xlsx"
+                , new CompanyDetailCreator() {
+
+                    @Override
+                    public InitialConsumerDetail createInitialConsumerDetail(String[] excelRow) {
+                        InitialConsumerDetail companyDetail = new InitialConsumerDetail();
+                        String UNKNOWN = "UNKNOWN";
+                        String mail = excelRow[1];
+                        mail = mail.replaceAll(";","");
+                        mail = mail.replaceAll(",", "");
+                        String[] mailSprlitArrays = mail.split("@");
+                        String man = mailSprlitArrays[0];
+                        companyDetail.setCompanyName(excelRow[0]);
+                        companyDetail.setMail(mail);
+                        companyDetail.setPhone(excelRow[2]);
+                        companyDetail.setFax(excelRow[2]);
+                        companyDetail.setCompanyAddress(excelRow[5]);
+                        companyDetail.setMan(man);
+                        companyDetail.setCountryOrZone(excelRow[5]);
+                        companyDetail.setNeedProduct(excelRow[6]);
+                        companyDetail.setWebSite(UNKNOWN);
+                        companyDetail.setSendCount(0);
+                        companyDetail.setBatchInfo("84");
+                        return companyDetail;
+                    }
+
+                }, 7);
     }
 }

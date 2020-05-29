@@ -49,7 +49,12 @@ public class MailServiceTest {
 /*        mailService.validAllEmailBatch("77", 10);*/
 /*        mailService.validAllEmailBatch("78", 10);
         mailService.validAllEmailBatch("79", 10);*/
+/*
         mailService.validAllEmailBatch("73", 10);
+*/
+
+        mailService.validAllEmailBatch("80", 10);
+
     }
 
     @Test
