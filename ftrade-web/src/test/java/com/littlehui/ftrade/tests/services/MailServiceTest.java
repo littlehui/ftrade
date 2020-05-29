@@ -66,8 +66,8 @@ public class MailServiceTest {
 
     @Test
     public void sendMailTests() {
-        MailSenderThreadHelper.init(10,70, 2);
-        mailService.sendMailBatch("4");
+        MailSenderThreadHelper.init(10,90, 2);
+        mailService.sendMailBatch("62");
         while (!MailSenderThreadHelper.allFinishFlag()) {
         }
     }
