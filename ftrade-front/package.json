@@ -14,7 +14,7 @@
     "axios": "^0.18.0",
     "crypto": "^1.0.1",
     "element-ui": "^2.2.0",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.21",
     "moment": "^2.21.0",
     "particles.js": "^2.0.0",
     "particlesjs": "^2.2.1",
