@@ -28,7 +28,7 @@
         <spring-version>5.0.7.RELEASE</spring-version>
 -->
         <elasticsearch-version>6.5.0</elasticsearch-version>
-        <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
+        <spring-boot.version>2.5.12</spring-boot.version>
         <spring-data-version>2.0.8.RELEASE</spring-data-version>
         <!-- dubbo -->
         <dubbo.version>2.6.4-p1-SNAPSHOT</dubbo.version>
